@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sudoku da Gabi</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div id="intro">
+    <div id="butterflies"></div>
+    <h1>Gabi linda e perfeita</h1>
+    <h2>Bem-vindos ao Sudoku da Gabi</h2>
+    <button onclick="startGame()">Começar</button>
+  </div>
+
+  <div id="game-container" class="hidden">
+    <div id="header">
+      <h2>Bem-vindos ao Sudoku da Gabi</h2>
+    </div>
+
+    <div id="controls">
+      <select id="difficulty">
+        <option value="easy">Fácil</option>
+        <option value="medium">Médio</option>
+        <option value="hard">Difícil</option>
+      </select>
+      <button onclick="newGame()">Novo Jogo</button>
+      <button onclick="restartGame()">Reiniciar</button>
+      <button onclick="checkSudoku()">Verificar</button>
+      <button onclick="toggleMusic()">Música</button>
+      <select id="theme-switcher" onchange="switchTheme(this.value)">
+        <option value="default">Tema Padrão</option>
+        <option value="pastel">Pastel</option>
+        <option value="dark">Escuro</option>
+      </select>
+    </div>
+
+    <div id="timer">Tempo: 00:00</div>
+    <div id="error-count">Erros: 0</div>
+    <div id="sudoku-board"></div>
+  </div>
+
+  <audio id="click-sound" src="assets/click.mp3"></audio>
+  <audio id="bg-music" src="assets/music.mp3" loop autoplay></audio>
+</body>
+</html>
